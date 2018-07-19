@@ -1,0 +1,63 @@
+{
+  "containerdefinitions": [
+    {
+      "volumesfrom": [],
+      "memory": 2048,
+      "extrahosts": null,
+      "dnsservers": null,
+      "disablenetworking": false,
+      "dnssearchdomains": null,
+      "portmappings": [],
+      "hostname": "my-automation-host",
+      "essential": true,
+      "entrypoint": null,
+      "mountpoints": [],
+      "containername": "my-automation-cont",
+      "ulimits": null,
+      "dockersecurityoptions": null,
+      "environment": [
+        {
+          "name": "PROJECT",
+          "value": "1"
+        },
+        {
+          "name": "ENV",
+          "value": "prod"
+        },
+        {
+          "name": "REGION",
+          "value": "ap-southeast-2"
+        },
+        {
+          "name": "CONFIGBUCKET",
+          "value": "-1"
+        },
+        {
+          "name": "CONFIGBUCKETKEY",
+          "value": "-1"
+        },
+        {
+          "name": "EXECUTIONARN",
+          "value": "-1"
+        },
+        {
+          "name": "RESULT",
+          "value": "-1"
+        }
+
+      ],
+      "links": null,
+      "workingdirectory": "/app",
+      "readonlyrootfilesystem": null,
+      "image": "my.dockerregistry.com/tools/my-automation-test",
+      "command": null,
+      "user": null,
+      "dockerlabels": null,
+      "logconfiguration": null,
+      "cpu": 0,
+      "privileged": null
+    }
+  ],
+  "volumes": [],
+  "family": "my-automation-family"
+}

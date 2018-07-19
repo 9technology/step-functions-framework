@@ -1,0 +1,47 @@
+{
+  "Comment": "My Project SM",
+  "StartAt": "StepWorkerLaunch_MySmActivity1",
+  "States": {
+    "StepWorkerLaunch_MySmActivity1": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:ap-southeast-2:123456789:function:stepworkerlauncher",
+      "Next": "MySmActivity1"
+    },
+    "MySmActivity1": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:ap-southeast-2:123456789:activity:MySmActivity1",
+      "Catch": [
+        {
+          "ErrorEquals": [ "States.ALL" ],
+          "Next": "StepWorkerCleanup"
+        }
+      ],
+      "TimeoutSeconds": 3600,
+      "HeartbeatSeconds": 3600,
+      "Next": "StepWorkerLaunch_MySmActivity2"
+    },
+    "StepWorkerLaunch_MySmActivity2": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:ap-southeast-2:123456789:function:stepworkerlauncher",
+      "Next": "MySmActivity2"
+    },
+    "MySmActivity2": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:ap-southeast-2:123456789:activity:MySmActivity2",
+      "Catch": [
+        {
+          "ErrorEquals": [ "States.ALL" ],
+          "Next": "StepWorkerCleanup"
+        }
+      ],
+      "TimeoutSeconds": 3600,
+      "HeartbeatSeconds": 3600,
+      "Next": "StepWorkerCleanup"
+    },
+    "StepWorkerCleanup": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:ap-southeast-2:123456789:function:stepworkercleanup",
+      "End": true
+    }
+  }
+}

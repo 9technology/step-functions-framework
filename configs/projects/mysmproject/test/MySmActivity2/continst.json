@@ -1,0 +1,11 @@
+{
+	"imageid": "ami-0e20176d",
+	"instancetype": "t2.medium",
+	"mincount": 1,
+	"maxcount": 1,
+	"iaminstanceprofile": "ecsInstanceRole",
+	"keyname": "MyKeyPair",
+	"subnetid": "subnet-123456",
+	"owner": "my-ecs-cluster",
+	"env": "test"
+}

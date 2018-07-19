@@ -1,0 +1,10 @@
+{
+  "project": "mysmproject",
+  "env": "test",
+  "region": "ap-southeast-2",
+  "mode": "run_state_machine",
+  "configbucket": "my-config-bucket",
+  "configbucketkey": "projects",
+  "executionarn": "null",
+  "result": "null"
+}

@@ -1,0 +1,40 @@
+{
+	"project": "mysmproject",
+	"env": "test",
+	"region": "ap-southeast-2",
+	"ec2instanceconfig": "continst.json",
+	"containerconfig": "container.json",
+	"workerconfig": "worker.json",
+	"accountid": "123456789",
+	"snstopicarn": "arn:aws:sns:ap-southeast-2:123456789:my-sns-role",
+	"ecstaskcluster": "my-ecs-cluster",
+	"activity": [
+		{
+			"activityname": "MySmActivity1",
+			"activityarn": ""
+		},
+		{
+			"activityname": "MySmActivity2",
+			"activityarn": ""
+		}
+	],
+	"configbucket": "my-config-bucket",
+	"configbucketkey": "projects",
+	"stateMachineDefinitionConfFile": "statemachine.json",
+	"stateMachineRoleArn": "arn:aws:iam::123456789:role/service-role/StatesExecutionRole",
+	"stateMachineName": "mysmproject-sm",
+	"stateMachineArn": "arn:aws:states:ap-southeast-2:123456789:stateMachine:mysmproject-sm",
+	"cloudwatchEventPattern": "",
+	"cloudwatchEventName": "mysmproject-cwe",
+	"cloudwatchEventRoleArn": "arn:aws:iam::123456789:role/events-invoke-step-function",
+	"cloudwatchEventScheduleExpression": "cron(59 05 * * ? *)",
+	"cloudwatchEventState": "ENABLED",
+	"cloudwatchEventInputConfFile": "cweinput.json",
+	"cloudwatchEventTargets": [
+		{
+			"arn": "arn:aws:lambda:ap-southeast-2:123456789:function:stepworkerlauncher",
+			"id": "stepworkerlauncher",
+			"input": ""
+		}
+	]
+}

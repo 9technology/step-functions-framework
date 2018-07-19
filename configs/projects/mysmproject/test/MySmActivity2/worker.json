@@ -1,0 +1,11 @@
+{
+	"project": "mysmproject",
+	"env": "test",
+	"region": "ap-southeast-2",
+	"mode": "activitymode",
+	"configprefix": "projects",
+	"ecstaskconfig": "ecstaskconfig",
+	"sfnactarn": "arn:aws:states:ap-southeast-2:123456789:activity:MySmActivity2",
+	"ecstaskcluster": "my-ecs-cluster",
+	"customparams": "bla bla bla"
+}
